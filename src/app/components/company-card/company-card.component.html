@@ -1,0 +1,7 @@
+<div class="app-company-card">
+  <a class="app-company-card__title" (click)="onCompanyTitleClick(companyDetails)">
+    {{ companyDetails.title }}
+  </a>
+  <p [innerHTML]="companyDetails.description | boldCompanyAddress"></p>
+  <p>{{ companyDetails.address_snippet }}</p>
+</div>

@@ -1,0 +1,36 @@
+@if (companyDetails) {
+  <div class="app-company-detail">
+    <div class="app-company-detail__section">
+      <h1 class="app-company-detail__title">{{ companyDetails.title }}</h1>
+      <p>Company number <span><strong>{{companyDetails.company_number}}</strong></span></p>
+    </div>
+
+    @if (showDetails) {
+      <div class="app-company-detail__section">
+        <p>Registered office address</p>
+        <p><strong>{{ companyDetails.address_snippet}}</strong></p>
+      </div>
+
+      <div class="app-company-detail__section">
+        <p>Company status</p>
+        <p><strong>{{ companyDetails.company_status | titlecase}}</strong></p>
+      </div>
+
+      <div class="app-company-detail__section">
+        <p>Company type</p>
+        <p><strong>{{ companyDetails.company_type | titlecase}}</strong></p>
+      </div>
+
+      <div class="app-company-detail__section">
+        <p>Incorporated on</p>
+        <p><strong>{{ companyDetails.date_of_creation | date:'dd MMMM YYYY'}}</strong></p>
+      </div>
+
+      <div class="app-company-detail__section">
+        <a class="app-company-detail__officers-link" (click)="onOfficersLinkClick()">List Officers</a>
+      </div>
+    }
+
+    <router-outlet (activate)="routerOutletHandler()" (deactivate)="routerOutletHandler()"></router-outlet>
+  </div>
+}

@@ -1,0 +1,9 @@
+<div class="app-company-search-results">
+  <h1>COMPANY SEARCH RESULTS</h1>
+
+  @if (companies && companies.items.length) {
+    @for (companyDetails of companies.items; track  companyDetails) {
+      <app-company-card [companyDetails]="companyDetails"></app-company-card>
+    }
+  }
+</div>

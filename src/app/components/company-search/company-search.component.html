@@ -1,0 +1,14 @@
+<div class="app-company-search">
+  <h1>LNRS Risk Narrative Company Search Engine</h1>
+
+  <form [formGroup]="companySearchFormGroup" class="example-form">
+    <mat-form-field class="app-company-search__form-field">
+      <mat-label>Company search</mat-label>
+      <input type="search" matInput formControlName="companySearchTerm"
+             placeholder="Company Name or Number">
+
+    </mat-form-field>
+  </form>
+
+  <button id="searchBtn" mat-stroked-button color="primary" [disabled]="!companySearchFormGroup.get('companySearchTerm')?.valid" (click)="onSearchClick()">Search</button>
+</div>

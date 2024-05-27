@@ -1,0 +1,10 @@
+<div class="app-officer-list">
+  @if (officersDetails && officersDetails.items.length) {
+    @for (officer of officersDetails.items; track  officer) {
+      <div class="app-officer-list__officer">
+        <p><strong>{{ officer.name }}</strong></p>
+        <p>{{ officer.officer_role }}</p>
+      </div>
+    }
+  }
+</div>
